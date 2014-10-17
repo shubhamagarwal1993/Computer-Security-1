@@ -1,0 +1,28 @@
+sagarwl4 total : 0/100
+Testing task1	0/26	
+	*Failed*
+
+root authority certificate wrong for website 1
+SHA1 wrong for website 1
+public key wrong for website 1
+root authority certificate wrong for website 2
+SHA1 wrong for website 2
+public key wrong for website 2
+root authority certificate wrong for website 3
+SHA1 wrong for website 3
+public key wrong for website 3	
+Testing task2	0/40	
+	*Failed*
+
+password 1 wrong
+password 2 wrong
+password 3 wrong
+password 4 wrong
+password 5 wrong
+password 6 wrong
+password 7 wrong
+password 8 wrong
+password 9 wrong
+password 10 wrong	
+Testing task3	0/34	
+	*Failed*	
