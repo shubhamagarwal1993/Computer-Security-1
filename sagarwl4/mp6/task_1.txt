@@ -1,0 +1,6 @@
+# address of print_id 
+
+# address of print_ssn 
+
+# Distance between the two variables 
+
