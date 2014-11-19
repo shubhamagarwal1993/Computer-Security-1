@@ -6,6 +6,10 @@ int MAX_MEM_POOL = 428;
 char* memoryPool = NULL;
 char* currentStartAddr = 0;
 
+void error_message(){
+    printf("\nError: Incorrect input argument.\n\nUsage: <this executable> <printable ASCII string>\n\n");
+}
+
 char* getBuffer(int size){
     if(memoryPool == NULL){
         memoryPool = (char*)malloc(sizeof(char)*MAX_MEM_POOL);
@@ -19,9 +23,33 @@ char* getBuffer(int size){
     return retAddr;
 }
 
+void ascii_helper(char* username)
+{
+	int i;
+	for(i = 0; i < strlen(username); i++)
+	{
+//		printf("%d", (int)username[i]);
+		if(	((int)username[i] > 90) || ((int)username[i] < 65))
+		{
+			
+			error_message();
+			exit(0);
+		}	 
+	}
+}
+
 void declare_variable(char **inputName, char **destName, char **titleString, char **destTitleString, char *username){
     *inputName = getBuffer(10);
-    strcpy(*inputName, username);
+	
+	
+	if((strlen(username) > 10) || (strlen(username) < 1) )						//added this
+	{
+		error_message();
+		exit(0);
+	}	
+	
+	ascii_helper(username);
+	strncpy(*inputName, username, 10);											//added this
     *destName = getBuffer(10);
     *titleString = getBuffer(16);
     *destTitleString = getBuffer(16);
@@ -45,9 +73,6 @@ void print_data(char *destName, char *destTitleString){
     printf("\n\n%s ",destTitleString);
     printf(destName);
     printf("\n\n");
-}
-void error_message(){
-    printf("\nError: Incorrect input argument.\n\nUsage: <this executable> <printable ASCII string>\n\n");
 }
 
 int main(int argc, char **argv) {
