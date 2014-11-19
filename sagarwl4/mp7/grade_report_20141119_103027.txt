@@ -1,0 +1,11 @@
+sagarwl4 total : 37/100
+Testing task1	25/50	
+	overflow : failed
+	symbols : passed
+	alphanumeric : passed
+	formatted string : failed	
+Testing task2	12/50	
+	normal input : passed
+	symbol : failed
+	lower case : failed
+	number : failed	
