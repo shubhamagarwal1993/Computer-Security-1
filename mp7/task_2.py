@@ -9,6 +9,13 @@ class BailOut(Exception):
 def set_var():
     uname = sys.argv[1]
     os.environ["BOARDSIZE"] = "6"
+    if len(uname)<=0 or len(uname)>10:
+        error_message_queen()
+        exit()
+    for i in uname:
+        if i < 'A' or i > 'Z':
+            error_message_queen()
+            exit()
     os.environ["USERNAME"] = uname
 
 def get_var():
