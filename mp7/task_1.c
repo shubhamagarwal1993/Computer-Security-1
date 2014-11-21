@@ -31,7 +31,6 @@ void ascii_helper(char* username)
 //		printf("%d", (int)username[i]);
 		if(	((int)username[i] > 126) || ((int)username[i] < 32))
 		{
-			
 			error_message();
 			exit(0);
 		}	 
@@ -40,7 +39,7 @@ void ascii_helper(char* username)
 
 void declare_variable(char **inputName, char **destName, char **titleString, char **destTitleString, char *username){
     *inputName = getBuffer(10);
-	
+    printf("argv_decVar = %s\n", username);
 	
 	if((strlen(username) > 10) || (strlen(username) < 1) )						//added this
 	{
@@ -75,6 +74,15 @@ void print_data(char *destName, char *destTitleString){
     printf("\n\n");
 }
 
+char* concat(char *s1, char *s2)
+{
+    char *result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the zero-terminator
+    //in real code you would check for errors in malloc here
+    strcpy(result, s1);
+    strcat(result, s2);
+    return result;
+}
+
 int main(int argc, char **argv) {
     if (argc < 2) {
         error_message();
@@ -86,9 +94,20 @@ int main(int argc, char **argv) {
     char *titleString;
     char *destTitleString;
 
-    declare_variable(&inputName, &destName, &titleString, &destTitleString, argv[1]);
+//    for(int i = 1; i < argc; i++)
+//    {
+//    	argv[1] = argv[i]
+//    }
+	int i = 1;
+    char* agv1 = argv[i];
+	char* agv2 = argv[i+1];
+    char* s = concat(agv1, agv2);
+    printf("argv_main = %s\n", s);
+
+    declare_variable(&inputName, &destName, &titleString, &destTitleString, /*argv[1]*/ s);
     data_relocate(inputName, destName, titleString, destTitleString);    
     print_data(destName, destTitleString);
 
+	free(s);//deallocate the string
     return 0;
 }
