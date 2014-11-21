@@ -56,12 +56,12 @@ void declare_variable(char **inputName, char **destName, char **titleString, cha
 }
 
 void name_relocate(char *inputName, char *destName){
-    strcpy(destName, inputName); 
+    strncpy(destName, inputName, 10); 
 }
 
 void title_relocate(char *titleString, char *destTitleString){
     titleString = "Your Name =";
-    strcpy(destTitleString, titleString);
+    strncpy(destTitleString, titleString, 10);
 }
 
 void data_relocate(char *inputName, char *destName, char *titleString, char *destTitleString){
@@ -70,8 +70,8 @@ void data_relocate(char *inputName, char *destName, char *titleString, char *des
 }
 
 void print_data(char *destName, char *destTitleString){
-    printf("\n\n%s ",destTitleString);
-    printf(destName);
+    printf("\n\n%s",destTitleString);
+    printf("%s", destName);
     printf("\n\n");
 }
 
