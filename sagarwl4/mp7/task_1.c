@@ -74,14 +74,14 @@ void print_data(char *destName, char *destTitleString){
     printf("\n\n");
 }
 
-char* concat(char *s1, char *s2)
-{
-    char *result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the zero-terminator
+//char* concat(char *s1, char *s2)
+//{
+//    char *result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the zero-terminator
     //in real code you would check for errors in malloc here
-    strcpy(result, s1);
-    strcat(result, s2);
-    return result;
-}
+//    strcpy(result, s1);
+//    strcat(result, s2);
+//    return result;
+//}
 
 int main(int argc, char **argv) {
     if (argc < 2) {
@@ -95,16 +95,16 @@ int main(int argc, char **argv) {
     char *destTitleString;
 
 //	char* temp;
-	char* s = argv[1];
-	int i;
-    for(i = 2; i < (argc); i++)
-    {
-    	s = concat(s, argv[i]);
+//	char* s = argv[1];
+//	int i;
+//   for(i = 2; i < (argc); i++)
+//    {
+//    	s = concat(s, argv[i]);
 //		temp = s;
 //		free(s);//deallocate the string    
-	}
-
-    declare_variable(&inputName, &destName, &titleString, &destTitleString, /*argv[1]*/ s);
+//	}
+//	s = concat(/, s);
+    declare_variable(&inputName, &destName, &titleString, &destTitleString, argv[1]);
     data_relocate(inputName, destName, titleString, destTitleString);    
     print_data(destName, destTitleString);
 
