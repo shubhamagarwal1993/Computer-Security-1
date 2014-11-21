@@ -29,7 +29,7 @@ void ascii_helper(char* username)
 	for(i = 0; i < strlen(username); i++)
 	{
 //		printf("%d", (int)username[i]);
-		if(	((int)username[i] > 90) || ((int)username[i] < 65))
+		if(	((int)username[i] > 126) || ((int)username[i] < 32))
 		{
 			
 			error_message();
