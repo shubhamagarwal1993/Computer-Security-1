@@ -1,0 +1,14 @@
+sagarwl4 total : 55/100
+Testing task1	0/35	
+	failed	
+Testing task2	35/35	
+	passed
+	
+Testing task3	20/30	
+	ip address  : passed
+	mac address : passed
+	domain name : failed	
+Testing task4(bonus)	0/10	
+	dll     : failed
+	module1 : failed
+	module2 : failed	
