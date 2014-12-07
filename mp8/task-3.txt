@@ -1,4 +1,4 @@
 # domain name
 172.16.165.165
 f0:19:af:02:9b:f1
-www.ciniholland.nl
+ciniholland.nl
