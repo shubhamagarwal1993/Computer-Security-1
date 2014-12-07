@@ -1,6 +1,6 @@
 # *.dll
-%2e/files/kernel32.dll
+kernel32.dll
 # *.module
-%2e/files/cit_video.module
+cit_video.module
 # *.module
-%2e/files/cit_ffcookie.module
+cit_ffcookie.module
